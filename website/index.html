@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+  <head>
+    <!-- use double mustache for HTML-escaped interpolation -->
+    <title>Newsbot</title>
+
+    <!-- use triple mustache for non-HTML-escaped interpolation -->
+    {{{ metas }}}
+  </head>
+  <body>
+    <!--vue-ssr-outlet-->
+    <p>Main Admin ID: {{ main }}</p>
+    <hr>
+    <p>Whitelisted Users</p>
+    {{{ whitelisted }}}
+    <hr>
+    <p>All Article ID's</p>
+    {{{ ids }}}
+    <hr>
+    <p>Want to see all the articles? Check out {{ path }} \articles.json</p>
+    <hr>
+    <h1>BOARD</h1>
+    <hr>
+    <p>Publish Article</p>
+    <form method="POST" action="/newArticle">
+      <input type="text" name="title" placeholder="title">
+      <input type="text" name="url" placeholder="image URL">
+      <textarea name="des" rows="5" cols="50"></textarea>
+      <input type="number" name="day" placeholder="Publish Datge">
+      <input type="number" name="hour" placeholder="Hour">
+      <input type="text" name="ampm" placeholder="AM/PM">
+      <input type="submit" value="Publish">
+    </form>
+    <hr>
+    <form method="POST" action="/removeUser">
+      <p>Remove User</p>
+      <input type="text" name="userid" placeholder="User ID">
+      <input type="submit" value="Remove">
+    </form>
+    <hr>
+    <form method="POST" action="/addUser">
+      <p>Add User</p>
+      <input type="text" name="userid" placeholder="User ID">
+      <input type="submit" value="Add">
+    </form>
+    <form method="POST" action="/delete">
+      <p>Delete Article</p>
+      <input type="text" name="articleID" placeholder="Article ID">
+      <input type="submit" value="Delete [This cannot be undone!]">
+    </form>
+  </body>
+</html>
