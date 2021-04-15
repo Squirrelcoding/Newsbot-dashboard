@@ -2,50 +2,83 @@
   <head>
     <!-- use double mustache for HTML-escaped interpolation -->
     <title>Newsbot</title>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <!-- use triple mustache for non-HTML-escaped interpolation -->
     {{{ metas }}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+   .card {display:inline-block;}
+      
+    </style>
   </head>
   <body>
     <!--vue-ssr-outlet-->
-    <p>Main Admin ID: {{ main }}</p>
-    <hr>
-    <p>Whitelisted Users</p>
-    {{{ whitelisted }}}
-    <hr>
-    <p>All Article ID's</p>
-    {{{ ids }}}
-    <hr>
-    <p>Want to see all the articles? Check out {{ path }} \articles.json</p>
-    <hr>
-    <h1>BOARD</h1>
-    <hr>
-    <p>Publish Article</p>
-    <form method="POST" action="/newArticle">
-      <input type="text" name="title" placeholder="title">
-      <input type="text" name="url" placeholder="image URL">
-      <textarea name="des" rows="5" cols="50"></textarea>
-      <input type="number" name="day" placeholder="Publish Datge">
-      <input type="number" name="hour" placeholder="Hour">
-      <input type="text" name="ampm" placeholder="AM/PM">
-      <input type="submit" value="Publish">
-    </form>
-    <hr>
-    <form method="POST" action="/removeUser">
-      <p>Remove User</p>
-      <input type="text" name="userid" placeholder="User ID">
-      <input type="submit" value="Remove">
-    </form>
-    <hr>
-    <form method="POST" action="/addUser">
-      <p>Add User</p>
-      <input type="text" name="userid" placeholder="User ID">
-      <input type="submit" value="Add">
-    </form>
-    <form method="POST" action="/delete">
-      <p>Delete Article</p>
-      <input type="text" name="articleID" placeholder="Article ID">
-      <input type="submit" value="Delete [This cannot be undone!]">
-    </form>
+    <div style="position:absolute; left:50px; ">
+      <h1>Newsbot Admin Board</h1>
+      <p>Main Admin ID: {{ main }}</p>
+      <r>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p>Whitelisted Users</p>
+          {{{ whitelisted }}}
+        </div>
+      </div>
+      <br>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p>All Article ID's</p>
+          {{{ ids }}}
+        </div>
+      </div>
+      <hr>
+      <p>Want to see all the articles? Check out {{ path }} \articles.json</p>
+      <hr>
+      <p>Publish Article</p>
+      <form method="POST" action="/newArticle">
+        <div class="mb3">
+          <input type="text" name="title" placeholder="title">
+          <input type="text" name="url" placeholder="image URL">
+        </div>
+        <textarea name="des" rows="5" cols="50"></textarea>
+        <div class="mb3">
+          <input type="number" name="day" placeholder="Publish Date">
+          <input type="number" name="hour" placeholder="Hour">
+        </div>
+        <div class="mb3">
+          <input type="text" name="ampm" placeholder="AM/PM">
+        </div>
+        <input type="submit" value="Publish">
+      </form>
+      <hr>
+      <form method="POST" action="/removeUser" >
+        <div class="mb3">
+        <p>Remove User</p>
+        <input type="text" name="userid" placeholder="User ID">
+        <input type="submit" value="Remove">
+        </div>
+      </form>
+      <hr>
+      <form method="POST" action="/addUser">
+        <p>Add User</p>
+        <input type="text" name="userid" placeholder="User ID">
+        <input type="submit" value="Add">
+      </form>
+      <form method="POST" action="/delete">
+        <p>Delete Article</p>
+        <input type="text" name="articleID" placeholder="Article ID">
+        <input type="submit" value="Delete [This cannot be undone!]">
+      </form>
+
+
+
+
+
+
+
+    </div>
   </body>
 </html>

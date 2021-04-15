@@ -58,10 +58,11 @@ app.get('*', async (req, res) => {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <meta name="keyword" content="vue,ssr">
+        <link rel="stylesheet" href="style.css">
     `,
     main: doc.data().main,
-    whitelisted: Object.keys(whitelisted).map(k => whitelisted[k]).join('<pre>'),
-    ids: Object.keys(articles).map(k => articles[k][k]).join('<pre>'),
+    whitelisted: Object.keys(whitelisted).map(k => whitelisted[k]).join('<pre>ㅤ'),
+    ids: Object.keys(articles).map(k => articles[k][k]).join('<pre>ㅤ'),
     path: __dirname
 };
 
