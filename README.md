@@ -31,7 +31,7 @@ Go to the firebase console and do the following:
 
 ### 5. Use it!
 
-To use, just type `node index.js` in the shell. After that, open your web browser and type `http:localhost:8080/` and your dashboard is ready to use!
+To use, just type `node index.js` in the shell. After that, open your web browser and type `http://localhost:8080/` and your dashboard is ready to use!
 
 ---
 # Features
