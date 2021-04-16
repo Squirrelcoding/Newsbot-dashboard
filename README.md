@@ -11,7 +11,7 @@ Follow the instructions to use this dashboard!
 
 ### 1. Clone the respitory
 Go to the shell, then type `git clone https://github.com/Squirrelcoding/Newsbot-dashboard.git`
-Then open the respitory.
+Then open the respitory. tip: use `setup.sh` (assuming your using bash)!
 
 ### 2. Make the files
 In the shell type `touch key.json` and paste your service account private key
