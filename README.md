@@ -20,7 +20,10 @@ In the shell type `touch key.json` and paste your service account private key
 ### 3. Install the dependencies
 Again, in the shell type `npm i express firebase-admin lodash vue@2.6.12 vue-server-renderer`
 
-### 4. Set up the values in firebase
+### 4. Change the Firebase URL
+On `index.js`, go to line 21 and change the firebase url to your firebase url.
+
+### 5. Set up the values in firebase
 Go to the firebase console and do the following:
 1. Go to Firestore
 2. Click `+ Start Collection`
@@ -29,7 +32,7 @@ Go to the firebase console and do the following:
 5. Make another value with a string or a number type and enter your discord ID called `main`.
 6. Your done!
 
-### 5. Use it!
+### 6. Use it!
 
 To use, just type `node index.js` in the shell. After that, open your web browser and type `http://localhost:8080/` and your dashboard is ready to use!
 
