@@ -18,7 +18,7 @@ const renderer = require('vue-server-renderer').createRenderer({
 
 admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
-	databaseURL: "https://poopnet-4fb22.firebaseio.com"
+	databaseURL: "==YOUR FB URL HERE=="
 });
 const db = admin.firestore();
 
