@@ -31,12 +31,14 @@ exports.run = async function(db, articlecontents) {
   var key = getNewestKey(allArticles, _);
   console.log(appendData(allArticles, {
     title: article.title,
+    author: article.author,
     imgURL: article.url,
     des: article.des,
     day: article.day,
     time: article.time,
     am_pm: article.ampm,
     id: newArticle,
+    anonymous: article.anonymous,
     published: false
   }, _))
   var list = doc.data().list;

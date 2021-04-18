@@ -40,6 +40,9 @@
       <p>Publish Article</p>
       <form method="POST" action="/newArticle">
         <div class="mb3">
+          <input type="text" name="author" placeholder="Author">
+        </div>
+        <div class="mb3">
           <input type="text" name="title" placeholder="title">
           <input type="text" name="url" placeholder="image URL">
         </div>
@@ -47,6 +50,12 @@
         <div class="mb3">
           <input type="number" name="day" placeholder="Publish Date">
           <input type="number" name="hour" placeholder="Hour">
+        </div>
+        <div class="mb3">
+          <select name="anonymous">
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
         </div>
         <div class="mb3">
           <input type="text" name="ampm" placeholder="AM/PM">

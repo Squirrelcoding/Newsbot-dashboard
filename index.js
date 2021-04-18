@@ -82,7 +82,9 @@ app.post("/newArticle", (req, res) => {
     des: req.body.des,
     day: req.body.day,
     time: req.body.hour,
-    ampm: req.body.ampm
+    ampm: req.body.ampm,
+    anonymous: req.body.anonymous,
+    author: req.body.author
   }
   const newarticle = require('./functions/publish.js');
   newarticle.run(db, contents)
